@@ -29,12 +29,9 @@ const handleResolvedOrRejectedPromise = (promise) => {
 const pauseForMs = (ms) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve()
-    })
-  },ms
-
-  )
-
+      resolve(undefined);
+    }, ms);
+  });
 };
 
 module.exports = {
