@@ -21,7 +21,7 @@ Explain why deeply nested callbacks (callback hell) are problematic, and describ
 
 **Your Answer:**
 
-
+Deeply nested callbacks, or callback hell, are problematic because the code becomes difficult to read, understand, and debug. Each callback is nested inside the previous one. It makes error handling more complicated, since each nested callback may need its own `try/catch` or conditional checks. Promise chaining with `.then()` solves this by allowing `asynchronous` operations to be written in a flat, sequential manner. Each `.then()` handles the result of the previous step, keeping the code clean, readable, and making error handling easier with a single `.catch()`.
 
 ## Question 3: Error Handling with `.catch()`
 
