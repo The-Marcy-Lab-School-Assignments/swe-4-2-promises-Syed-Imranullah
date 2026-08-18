@@ -28,6 +28,7 @@ Deeply nested callbacks, or callback hell, are problematic because the code beco
 If you have a chain of three `.then()` calls followed by a single `.catch()`, and the second `.then()` throws an error, what happens? Why is this behavior useful?
 
 **Your Answer:**
-Deeply nested callbacks are bad because the code becomes hard to read and follow since everything keeps stacking inside other functions. It also makes debugging harder because you have to check multiple layers if something goes wrong.
 
-Promise chaining helps make code cleaner by letting asynchronous tasks run in order using .then(). Instead of nesting logic, each .then() handles the next step, making the program easier to understand and maintain.
+When the second `.then()` throws an error, the third `.then()` gets skipped entirely and the error jumps straight to the `.catch()` at the end. The `.catch()` receives the error and handles it there.
+
+This is useful because you only need one `.catch()` to handle errors from anywhere in the chain. Instead of writing separate error handling for every step, a single `.catch()` at the end catches whatever goes wrong, keeping the code clean and easy to manage.
